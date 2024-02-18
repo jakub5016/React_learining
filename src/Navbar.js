@@ -1,14 +1,27 @@
 import './Navbar.css';
+import { useState } from 'react';
+
 
 const Navbar = () => {
-    const facebook_link = "www.facebook.com";
+    const [opacity, setOpacity] = useState('100%')
+    const [isButtonDisabled, setButtonDisabled] = useState(false);
+
+    const buttonStyle = {
+        opacity: opacity,
+    };
 
     return (  
+
         <nav className="navBar">
             <div className="barContent">
-                <button className='element'> Home</button>
-                <button className='element'> Items</button>
-                <button className='element'> Dates</button>
+                <button className='element' onClick={() => {
+                    setOpacity("0%"); 
+                    console.log(opacity);
+                    setButtonDisabled(true);
+                    }
+                    }> Home</button>
+                <button className='element' style={buttonStyle} disabled={isButtonDisabled}> Items</button>
+                <button className='element' style={buttonStyle} disabled={isButtonDisabled}> Dates</button>
 
             </div>
         </nav>
