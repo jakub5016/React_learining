@@ -6,8 +6,10 @@ const Navbar = () => {
     return (  
         <nav className="navBar">
             <div className="barContent">
-                <a className='element'> Home</a>
-                <a className='element'> Items</a>
+                <button className='element'> Home</button>
+                <button className='element'> Items</button>
+                <button className='element'> Dates</button>
+
             </div>
         </nav>
     );

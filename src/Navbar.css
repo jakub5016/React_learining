@@ -14,4 +14,15 @@
 
 .element{
     margin-right: 5vw;
+    text-decoration: none;
+    border-radius: 30px;
+    border-color: transparent;
+    background-color: lightgray;
+    transition: 0.3s;
+
+}
+
+.element:hover{
+    background-color: #61dafb;
+    color: white;
 }
