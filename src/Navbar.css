@@ -1,0 +1,17 @@
+.navBar{
+    background-color: #61dafb;
+    text-align: left;
+    font-size: large;
+}
+
+.barContent{
+    color: #282c34;
+    margin-left: 5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+}
+
+.element{
+    margin-right: 5vw;
+}
