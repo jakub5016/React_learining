@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './Navbar';
+import Content from './Content'
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
@@ -10,9 +11,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <header className="App-header">
-        <p className="">Welcome to scheduler</p>
-      </header>
+      <Content />
     </div>
     
   );
