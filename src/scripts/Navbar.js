@@ -17,7 +17,7 @@ const Navbar = (props) => {
 
     return (  
 
-        <nav className="navBar">
+        <nav className="navBar" style={{backgroundColor : props.nightMode ? 'var(--main-nightmode)' : 'var(--main)'}}>
             <div className="barContent">
 
 

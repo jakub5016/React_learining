@@ -3,7 +3,7 @@ import '../css/Content.css';
 
 
 
-const Content = () =>{
+const Content = (props) =>{
 
     var windowSize = 500;
 
@@ -18,13 +18,6 @@ const Content = () =>{
 
 
     ])
-
-    const gridContainerStyle = {
-        display: "grid",
-        gridTemplateColumns: `repeat(${numColumns}, 1fr)`,
-        padding: "10px",
-        gap: "50px"
-    };
 
     const handleResize = () => {
         setNumColumns(Math.floor(window.innerWidth / windowSize));
@@ -42,9 +35,16 @@ const Content = () =>{
     
 
     return(
-        <div className="grid-container" style={gridContainerStyle}>
+        <div className="grid-container" style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${numColumns}, 1fr)`,
+            padding: "10px",
+            gap: "50px",
+            backgroundColor: props.nightMode ? "var(--main-backgorund-nightmode)" : "var(--main-backgorund)"}
+        }>
             {windows.map((window) => (
-                <div className="grid-item" key={window.id}>
+                <div className="grid-item" key={window.id} style={
+                    {backgroundColor: props.nightMode ? "var(--main-nightmode)" : "var(--main)"}}>
                     <h2 className="title">{window.title}</h2>
                     <p className="content">{window.contnent}</p>
                 </div>
