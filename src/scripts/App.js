@@ -1,4 +1,4 @@
-import './App.css';
+import '../css/App.css';
 import Navbar from './Navbar';
 import Content from './Content'
 // Bootstrap CSS

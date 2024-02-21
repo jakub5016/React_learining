@@ -1,5 +1,5 @@
 import { useState, useEffect  } from 'react';
-import './Content.css';
+import '../css/Content.css';
 
 
 
