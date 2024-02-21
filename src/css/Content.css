@@ -6,7 +6,7 @@
 
   }
 .grid-item {
-    background-color: #61dafb;    
+    background-color: var(--main);    
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 5vh;
     padding: 20px;

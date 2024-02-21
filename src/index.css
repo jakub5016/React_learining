@@ -1,3 +1,13 @@
+:root {
+  --main: #6050dc; 
+  --main-backgorund: #282c34;
+
+  --main-nightmode: #61DAFB;
+  --main-backgorund-nightmode: #d7d3cb;
+}
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

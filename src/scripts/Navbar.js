@@ -1,8 +1,9 @@
 import '../css/Navbar.css';
+import ToggleButton from './ToggleButton';
 import { useState } from 'react';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [opacity, setOpacity] = useState('100%')
     const [isButtonDisabled, setButtonDisabled] = useState(false);
     
@@ -52,6 +53,8 @@ const Navbar = () => {
                     console.log(Math.abs(opacity.substring(0, opacity.length -1) - 100))
                     }
                     }> Go 🔙</button>
+
+                <ToggleButton nightMode={props.nightMode} handleNightMode={props.handleNightMode} />
             </div>
         </nav>
     );

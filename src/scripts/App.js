@@ -5,12 +5,20 @@ import Content from './Content'
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import { useState } from 'react';
 
 
 function App() {
+  const [nightMode, setNightMode] = useState(false);
+
+  const handleNightMode = (status) =>{
+    setNightMode(status);
+    console.log(status);
+  }
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar nightMode={nightMode} handleNightMode={handleNightMode}/>
       <Content />
     </div>
     
