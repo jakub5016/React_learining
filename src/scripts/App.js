@@ -11,6 +11,8 @@ import { useState } from 'react';
 function App() {
   const [nightMode, setNightMode] = useState(false);
   const [itemsSelect, setitemsSelect] = useState(false);
+  const [isHome, setIsHome] = useState(true);
+  const [isItems, setIsItems] = useState(false);
 
   const handleNightMode = (status) =>{
     setNightMode(status);
@@ -18,18 +20,25 @@ function App() {
 
 
   return (
-    <div className="App" style={{backgroundColor: nightMode ? "var(--main-backgorund-nightmode)" : "var(--main-backgorund)"}}>
+    <div className="App" style={{backgroundColor: nightMode ? "var(--main-backgorund-nightmode)" : "var(--main-backgorund)"} }>
       <Navbar 
         nightMode={nightMode} 
         handleNightMode={handleNightMode} 
         
+        isHome={isHome}
+        setIsHome={setIsHome}
+        
+        isItems={isItems}
+        setIsItems={setIsItems}
+
         itemsSelect={itemsSelect} 
         handleitemsSelect={(status) => {
           setitemsSelect(status)
-        }
+        }        
         }/>
         
-      <Content nightMode={nightMode} handleNightMode={handleNightMode}/>
+      {isHome && !isItems && <div style={{color : nightMode ? "black" : "white"}}> WELCOME </div>}
+      {isItems && !isHome && <Content nightMode={nightMode} handleNightMode={handleNightMode}/>}
     </div>
     
   );

@@ -15,7 +15,6 @@ const Navbar = (props) => {
 
     useEffect(() =>{
         setButtonSizeArray(ref.current.clientWidth)
-        console.log(buttonSizeArray)
     })
 
     const backButtonStyle = {
@@ -27,38 +26,27 @@ const Navbar = (props) => {
         <nav className="navBar" style={{backgroundColor : props.nightMode ? 'var(--main-nightmode)' : 'var(--main)'}}>
             <div className="barContent" style={{gap : (window.innerWidth/2) - buttonSizeArray}}>
                 <div className="leftBar" ref={ref}>
-                <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
-                        setOpacity("0%"); 
-                        // console.log(opacity);
-                        setButtonDisabled(true);
+                <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {                        
+                        props.setIsHome(true)
+                        props.setIsItems(false)
+
                         }
                         }
                     > Home</button>
                     <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
-                        setOpacity("0%"); 
-                        // console.log(opacity);
-                        setButtonDisabled(true);
+                        props.setIsItems(true)
+                        props.setIsHome(false)
+
                         }
                         }
                     > Items</button>
                     <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
-                        setOpacity("0%"); 
-                        // console.log(opacity);
-                        setButtonDisabled(true);
                         console.log(Math.abs(opacity.substring(0, opacity.length -1) - 100))
                         }
                         }
                     > Dates</button>
                 </div>
                 <div className="rightBar">
-                    <button className='element' style={backButtonStyle} disabled={!isButtonDisabled} onClick={() => {
-                        setOpacity("100%"); 
-                        // console.log(opacity);
-                        setButtonDisabled(false);
-                        console.log(Math.abs(opacity.substring(0, opacity.length -1) - 100))
-                        }
-                        }> Go 🔙</button>
-
                     <ToggleButton nightMode={props.nightMode} handleNightMode={props.handleNightMode} />
                 </div>
             </div>
