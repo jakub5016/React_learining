@@ -1,15 +1,22 @@
 import '../css/Navbar.css';
 import ToggleButton from './ToggleButton';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 
 const Navbar = (props) => {
     const [opacity, setOpacity] = useState('100%')
     const [isButtonDisabled, setButtonDisabled] = useState(false);
-    
+    const [buttonSizeArray, setButtonSizeArray] = useState(0);
+    const ref = useRef(null)
+
     const buttonStyle = {
         opacity: opacity,
     };
+
+    useEffect(() =>{
+        setButtonSizeArray(ref.current.clientWidth)
+        console.log(buttonSizeArray)
+    })
 
     const backButtonStyle = {
         opacity: Math.abs(opacity.substring(0, opacity.length -1) - 100) + "%",
@@ -18,19 +25,15 @@ const Navbar = (props) => {
     return (  
 
         <nav className="navBar" style={{backgroundColor : props.nightMode ? 'var(--main-nightmode)' : 'var(--main)'}}>
-            <div className="barContent">
-
-
-
-
-                {/* <button className='element' style={backButtonStyle} disabled={!isButtonDisabled} onClick={() => {
-                    setOpacity("0%"); 
-                    // console.log(opacity);
-                    setButtonDisabled(true);
-                    }
-                    }> Home</button> */}
-
-                <div className="leftBar">
+            <div className="barContent" style={{gap : (window.innerWidth/2) - buttonSizeArray}}>
+                <div className="leftBar" ref={ref}>
+                <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
+                        setOpacity("0%"); 
+                        // console.log(opacity);
+                        setButtonDisabled(true);
+                        }
+                        }
+                    > Home</button>
                     <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
                         setOpacity("0%"); 
                         // console.log(opacity);

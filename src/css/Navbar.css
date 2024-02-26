@@ -7,11 +7,12 @@
 .barContent{
     color: var(--main-backgorund);
     margin-left: 5vw;
+    margin-right: 5vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50vw;
+    gap: 30vw;
 }
 
 .element{
@@ -51,4 +52,8 @@
 .toggle-button.off {
     background-color: white;
     color: black;
+}
+
+.rightBar{
+    justify-self: right;
 }
