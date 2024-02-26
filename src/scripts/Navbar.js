@@ -29,32 +29,35 @@ const Navbar = (props) => {
                     setButtonDisabled(true);
                     }
                     }> Home</button> */}
-                <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
-                    setOpacity("0%"); 
-                    // console.log(opacity);
-                    setButtonDisabled(true);
-                    }
-                    }
-                > Items</button>
-                <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
-                    setOpacity("0%"); 
-                    // console.log(opacity);
-                    setButtonDisabled(true);
-                    console.log(Math.abs(opacity.substring(0, opacity.length -1) - 100))
-                    }
-                    }
-                > Dates</button>
-                
 
-                <button className='element' style={backButtonStyle} disabled={!isButtonDisabled} onClick={() => {
-                    setOpacity("100%"); 
-                    // console.log(opacity);
-                    setButtonDisabled(false);
-                    console.log(Math.abs(opacity.substring(0, opacity.length -1) - 100))
-                    }
-                    }> Go 🔙</button>
+                <div className="leftBar">
+                    <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
+                        setOpacity("0%"); 
+                        // console.log(opacity);
+                        setButtonDisabled(true);
+                        }
+                        }
+                    > Items</button>
+                    <button className='element' style={buttonStyle} disabled={isButtonDisabled} onClick={() => {
+                        setOpacity("0%"); 
+                        // console.log(opacity);
+                        setButtonDisabled(true);
+                        console.log(Math.abs(opacity.substring(0, opacity.length -1) - 100))
+                        }
+                        }
+                    > Dates</button>
+                </div>
+                <div className="rightBar">
+                    <button className='element' style={backButtonStyle} disabled={!isButtonDisabled} onClick={() => {
+                        setOpacity("100%"); 
+                        // console.log(opacity);
+                        setButtonDisabled(false);
+                        console.log(Math.abs(opacity.substring(0, opacity.length -1) - 100))
+                        }
+                        }> Go 🔙</button>
 
-                <ToggleButton nightMode={props.nightMode} handleNightMode={props.handleNightMode} />
+                    <ToggleButton nightMode={props.nightMode} handleNightMode={props.handleNightMode} />
+                </div>
             </div>
         </nav>
     );
